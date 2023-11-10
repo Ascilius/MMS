@@ -1,3 +1,5 @@
+// v0.2
+
 #include <filesystem>
 #include <fstream>
 #include <iostream>
@@ -11,16 +13,20 @@ int main(int argc, char* argv[]) {
 	std::cout << "Directory path: " << directory_path << std::endl;
 
 	std::string output = "";
+	int n = 0;
 	try { 
 		for (const auto& entry : fs::directory_iterator(directory_path)) {
-            if (fs::is_regular_file(entry.path()))
+            if (fs::is_regular_file(entry.path())) {
                 output += std::string(entry.path().filename()) + "\n";
+                n++;
+            }
         }
 	} catch (const fs::filesystem_error& ex) {
 		std::cerr << ex.what() << std::endl;
 	}
 
 	std::cout << "Files:\n" << output << std::endl;
+	std::cout << n << " files read." << std::endl;
 	std::cout << "Writing to \"" << output_file << "\"..." << std::endl;
 	std::ofstream out_str(output_file);
 	out_str << output;
