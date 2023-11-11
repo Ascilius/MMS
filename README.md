@@ -29,7 +29,7 @@ Set of file reading and writing tools I use to manage my personal music collecti
           - Year
        - The first row has to be the above column headers
 
-#### Known Issues:
+Known Issues:
  - Renaming the album artist name doesn't work
  - Using non-ASCII characters in may not work
  - Not an issue, but remember Windows does not allow / in file names
