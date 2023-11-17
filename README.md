@@ -1,4 +1,4 @@
-# Music Management System
+# Music Management System (MMS)
 Set of file reading and writing tools I use to manage my personal music collection.
 
 ## Upcoming Features:
